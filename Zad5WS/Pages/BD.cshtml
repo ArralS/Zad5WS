@@ -3,4 +3,16 @@
 @{
     ViewData["Title"] = "Pobrane z Bazy Danych";
 }
-
+<div class="text-center">
+    <h1 class="display-8">Rekordy pobrane z Bazy Danych</h1>
+</div>
+@foreach (var item in Model.Products)
+{
+    <p>
+    <small>@Html.DisplayFor(modelItem => item.Maker)</small>
+    <small>@Html.DisplayFor(modelItem => item.Image)</small>
+    <small> @Html.DisplayFor(modelItem => item.Url)</small>
+    <small>@Html.DisplayFor(modelItem => item.Title)</small>
+    <small> @Html.DisplayFor(modelItem => item.Description)</small>
+    </p>
+}

@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Zad5WS.Services;
+using Zad5WS.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Zad5WS
 {
@@ -24,6 +27,9 @@ namespace Zad5WS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ProductContext>(options => {
+                options.UseSqlServer(Configuration.GetConnectionString("Zad5"));
+            });
             services.AddRazorPages();
             services.AddTransient<JsonFileProductService>();
         }
