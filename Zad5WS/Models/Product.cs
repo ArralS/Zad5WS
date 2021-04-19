@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace Zad5WS.Models
 {
     public class Product
     {
-        public string id { get; set; }
+
+        public string id { get; set; } 
         public string Maker { get; set; }
        
         [JsonPropertyName("img")]
